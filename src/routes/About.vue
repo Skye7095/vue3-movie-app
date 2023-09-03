@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="logo">
-      <img src="~assets/logo.png" :alt="name">
+      <img :src="image" :alt="name">
     </div>
     <div class="name">{{ name }}</div>
     <div>{{ email }}</div>
@@ -19,7 +19,8 @@ export default {
       'name',
       'email',
       'blog',
-      'phone'
+      'phone',
+      'image'
     ])
   }
 }

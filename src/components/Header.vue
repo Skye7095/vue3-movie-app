@@ -15,12 +15,13 @@
       </div>
     </div>
     <div class="user" @click="toAbout">
-      <img src="~/assets/logo.png" :alt="name">
+      <img :src="image" :alt="name">
     </div>
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Logo from "~/components/Logo"
 
 export default {
@@ -47,9 +48,13 @@ export default {
     }
   },
   computed: {
-    name() {
-      return this.$store.state.about.name
-    }
+    ...mapState('about', [
+      'name',
+      'email',
+      'blog',
+      'phone',
+      'image'
+    ])
   },
   methods: {
     isMatch(path) {
